@@ -42,13 +42,13 @@ def train_model(
             print("⚠ Using CPU")
 
     # ---- Data ----
-    print("📂 Loading data...")
+    print(" Loading data...")
     train_loader, val_loader, _ = create_dataloaders(
         dataset_root, img_size=img_size, batch_size=batch_size
     )
 
     # ---- Model / loss / optimizer ----
-    print("🧠 Building model...")
+    print(" Building model...")
     model = model_class().to(device)
     bce = nn.BCELoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
@@ -66,7 +66,7 @@ def train_model(
     last_ckpt_path = os.path.join(ckpt_dir, "last_checkpoint.pth")
 
     if resume and os.path.exists(last_ckpt_path):
-        print(f"🔁 Resuming from {last_ckpt_path}")
+        print(f" Resuming from {last_ckpt_path}")
         ckpt = torch.load(last_ckpt_path, map_location=device)
         model.load_state_dict(ckpt["model_state"])
         optimizer.load_state_dict(ckpt["optimizer_state"])
@@ -77,7 +77,7 @@ def train_model(
     patience_counter = 0
     patience_limit = 5
 
-    print("\n🚀 Starting training...\n")
+    print("\n Starting training...\n")
 
     for epoch in range(start_epoch, num_epochs + 1):
 
@@ -143,7 +143,7 @@ def train_model(
         if val_loss < best_val_loss:
             best_val_loss = val_loss
             torch.save(model.state_dict(), checkpoint_path)
-            print(f"💾 Saved NEW BEST model to {checkpoint_path}")
+            print(f" Saved NEW BEST model to {checkpoint_path}")
             patience_counter = 0
         else:
             patience_counter += 1
@@ -151,8 +151,8 @@ def train_model(
 
         # ---------- Early stopping ----------
         if patience_counter >= patience_limit:
-            print("\n⛔ Early stopping activated!")
+            print("\n Early stopping activated!")
             break
 
-    print("\n🎉 Training completed!")
+    print("\n Training completed!")
     return model
