@@ -39,3 +39,18 @@ Notebook supports:
 - sod_model_deep.py
 - demo_notebook.ipynb
 
+
+## 📥 Dataset Download (Official Links)
+
+This project uses the **DUTS dataset** for Salient Object Detection.
+
+You can download the original dataset here:
+
+- **DUTS-TR (Training Set)**  
+  https://saliencydetection.net/duts/download/DUTS-TR.zip
+
+- **DUTS-TE (Testing Set)**  
+  https://saliencydetection.net/duts/download/DUTS-TE.zip
+
+After downloading, extract both zips inside a folder and run the dataset preparation 
+script included in this project (Colab notebook automatically handles it).
