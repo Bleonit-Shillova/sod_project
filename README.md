@@ -19,9 +19,9 @@ This project implements a complete Salient Object Detection pipeline using UNet 
 ## Results
 | Model | IoU | Precision | Recall | F1 | MAE |
 |-------|------|-----------|---------|--------|-------|
-| Simple UNet | 0.7617 | 0.8542 | 0.8691 | 0.8538 | 0.0777 |
-| Dropout UNet | 0.7603 | 0.8612 | 0.8611 | 0.8531 | 0.0782 |
-| Deep UNet | 0.7509 | 0.8632 | 0.8459 | 0.8464 | 0.0771 |
+| Simple UNet | 0.7478 | 0.87724 | 0.8283 | 0.8437 | 0.0777 |
+| Dropout UNet | 0.7611 | 0.8616 | 0.8616 | 0.8536 | 0.0782 |
+| Deep UNet | 0.7517 | 0.8637 | 0.8464 | 0.84704 | 0.0771 |
 
 ## Demo
 Notebook supports:
